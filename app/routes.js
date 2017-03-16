@@ -8,6 +8,7 @@ module.exports = function(app) {
 
 	app.get('/', function(req, res) {
 		res.render('index.ejs', {
+			message: req.flash('home-flash'),
 			navLinks: [navLinks.getHome(true), navLinks.getManage(false), navLinks.getBrowse(false), navLinks.getDashboard(false)],
 			user: req.user
 		});
@@ -58,6 +59,7 @@ module.exports = function(app) {
 				}
 				if(user.validPassword(req.body.password)) {
 					req.session.user = user;
+					res.cookie('cookieName', 'This cookie!', { maxAge: 900000, httpOnly: true });
 					res.redirect('/');
 				} else {
 					req.flash('login-message', 'Email address or password incorrect.');
@@ -96,5 +98,15 @@ module.exports = function(app) {
 				res.redirect('/');
 			});
 		});
+	});
+
+	app.get('/logout', function(req, res) {
+		if(req.session.user) {
+			req.session.user = null;
+		}
+		if(req.cookies.login_remember_token) {
+			res.clearCookie('login_remember_token');
+		}
+		res.redirect('/');
 	});
 }

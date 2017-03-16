@@ -28,9 +28,10 @@ app.use(session({saveUninitialized:false, resave: false, secret: 'keyboard cat'}
 app.use(flash());
 
 app.use(function(req, res, next) {
-	console.log(req.session);
+	console.log(req.cookies);
 	if(req.session.user) {
 		req.user = req.session.user;
+		console.log(req.user.local.email);
 	}
 	next();
 });

@@ -1,0 +1,37 @@
+{
+  "name": "rl-fcc-book-trade",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ralph7C2/rl-fcc-book-trade.git"
+  },
+  "author": "Ralph Landon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ralph7C2/rl-fcc-book-trade/issues"
+  },
+  "homepage": "https://github.com/Ralph7C2/rl-fcc-book-trade#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.17.1",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "express-session": "^1.15.1",
+    "mongoose": "^4.8.7",
+    "morgan": "^1.8.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "q": "^1.4.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0"
+  }
+}

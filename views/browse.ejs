@@ -1,0 +1,17 @@
+<!-- views/browse.ejs -->
+<!doctype html>
+<html lang="en">
+<head>
+	<%- include ./partials/head.ejs %>
+</head>
+<%- include ./partials/nav.ejs %>
+<body>
+	<div class="container">
+		<ul>
+			<% books.forEach(function(book) { %>
+				<li><%=book.count%> User(s) have <%=book.book.title%> by <%= book.book.author %></li>
+			<% }); %>
+		</ul>
+	</div>
+</body>
+</html>
